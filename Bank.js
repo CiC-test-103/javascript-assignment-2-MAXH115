@@ -98,24 +98,7 @@ class Account {
     // for account sending { transactionType: 'Transfer', amount: 300, to: recipientName }
     // for account recieving { transactionType: 'Received', amount: 300, from: senderName }
 
-    // displayTransactionHistory() {
-    //     if (this.transactionHistory.length === 0) {
-    //         console.log(`${this.name}'s account has no transaction history.`);
-    //         return;
-    //     }
-    //     console.log(`${this.name}'s transaction history:`);
-    //     this.transactionHistory.forEach((transaction, index) => {
-    //         if (transaction.transactionType === 'Transfer') {
-    //             if (transaction.to) {
-    //                 console.log(`${index + 1}. ${transaction.transactionType} to ${transaction.to}: $${transaction.amount}`);
-    //             } else {
-    //                 console.log(`${index + 1}. ${transaction.transactionType} from ${transaction.from}: $${transaction.amount}`);
-    //             }
-    //         } else {
-    //             console.log(`${index + 1}. ${transaction.transactionType}: $${transaction.amount}`);
-    //         }
-    //     });
-    // }
+    
 
 
     // Example: checkBalance()
