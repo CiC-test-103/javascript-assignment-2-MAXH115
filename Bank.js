@@ -41,6 +41,7 @@ class Account {
     }
 
     // Add methods here:
+
     // Example: deposit(amount) 
     // example data to be stored in transactionHistory { transactionType: 'Deposit', amount: 500 }
 
@@ -67,12 +68,15 @@ class Account {
             return
         }
         this.balance -= amount;
-        this.transactionHistory.push({ transactionType: 'Withdraw', amount });
-        console.log(`Withdraw ${amount} in ${this.name}'s account, new balance is $${this.balance}.`);
+        this.transactionHistory.push({ transactionType: 'Withdrawal', amount });
+        console.log(`Withdrawl ${amount} in ${this.name}'s account, new balance is $${this.balance}.`);
     }
 
     // Example: transfer(amount, recipientAccount)
     // example data to be stored in transactionHistory:
+    // for account sending { transactionType: 'Transfer', amount: 300, to: recipientName }
+    // for account recieving { transactionType: 'Received', amount: 300, from: senderName }
+
     transfer(amount, recipientAccount) {
         if (amount < 0) {
             console.log(`Transfer amount must be positive.`)
@@ -94,12 +98,6 @@ class Account {
         console.log(`Transfer ${amount} to ${recipientAccount.name}'s account, new balance is $${this.balance}.`);
 
     }
-
-    // for account sending { transactionType: 'Transfer', amount: 300, to: recipientName }
-    // for account recieving { transactionType: 'Received', amount: 300, from: senderName }
-
-    
-
 
     // Example: checkBalance()
     checkBalance() {
@@ -136,6 +134,8 @@ function testBankOperations() {
     console.log('John\'s balance:', johnFinalBalance);
     console.log('Jane\'s balance:', janeFinalBalance);
 
+    // bank.displayAccounts();
+
     // Return balances for testing
     return {
         johnFinalBalance,
@@ -151,3 +151,4 @@ module.exports = testBankOperations;
 
 
 console.log(testBankOperations());
+
